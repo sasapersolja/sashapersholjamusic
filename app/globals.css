@@ -1,73 +1,51 @@
 /* GLOBAL STYLES */
 html, body {
   margin: 0;
-  padding: 0;
   height: 100%;
   font-family: system-ui, sans-serif;
-  color: #fff; /* White text over picture */
+  color: #000;
   background-color: #000;
-
-  /* Background Image */
   background-image: url("/background.jpg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center top;
   background-attachment: fixed;
   background-size: cover;
 }
 
-/* Page Layout */
-.page-container {
-  min-height: 100vh;
+/* Navbar */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
   display: flex;
-  flex-direction: column;
-}
-
-/* Navbar + Footer (same style) */
-nav, footer {
-  background: rgba(0,0,0,0.85); /* Dark, no white stripe */
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
+  gap: 1rem;
   align-items: center;
-  height: 60px;
-  color: #fff;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;   /* ⬅️ Reduced height */
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
+.nav-brand { font-weight: bold; }
+.nav-links { display: flex; gap: 1rem; }
+nav a { color: #111; text-decoration: none; }
 
-/* Navbar Links */
-.nav-links {
-  margin-left: auto;
-  display: flex;
-  gap: 1rem;
-}
-.nav-links a { color: #fff; text-decoration: none; }
-
-/* Remove white background from main content */
-main {
-  flex: 1;
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 1rem;
-  background: transparent;
-}
-
-/* Gallery grid */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-.gallery-grid img {
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;   /* ⬅️ Same height as navbar */
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  text-align: center;
+  font-size: 0.9rem;
 }
 
-/* Lyrics Block */
-.lyrics-block {
-  background: rgba(0,0,0,0.5);
-  border-radius: 8px;
+/* Main Content */
+main {
+  max-width: 960px;
+  margin: 4rem auto;
   padding: 1rem;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
 }
-.lyrics-block pre { white-space: pre-wrap; }
