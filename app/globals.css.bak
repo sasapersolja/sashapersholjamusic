@@ -1,0 +1,78 @@
+background-size: cover;background-size: 80%;/* GLOBAL STYLES */
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  background: #000;
+  background-image: url("/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  color: #000;
+
+  /* Flex layout for sticky footer */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make body fill screen height and push footer down */
+body {
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; gap: 1rem; align-items: center; padding: 1rem;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.nav-brand { font-weight: 700; }
+.nav-links { margin-left: auto; display: flex; gap: 1rem; }
+nav a { color: #111; text-decoration: none; }
+
+/* Main container takes full space */
+main {
+  flex: 1;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+}
+
+/* Footer fixed at bottom */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: auto;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Lyrics block */
+.lyrics-block {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 1rem;
+}
+.lyrics-block pre {
+  white-space: pre-wrap;
+}
+
+/* Hide main on pages with no content (e.g., Home) */
+main:empty { display: none; }

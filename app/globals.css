@@ -1,42 +1,73 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
+/* GLOBAL STYLES */
+html, body {
   margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  color: #fff; /* White text over picture */
+  background-color: #000;
+
+  /* Background Image */
+  background-image: url("/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Page Layout */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Navbar + Footer (same style) */
+nav, footer {
+  background: rgba(0,0,0,0.85); /* Dark, no white stripe */
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  color: #fff;
 }
+
+/* Navbar Links */
+.nav-links {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+.nav-links a { color: #fff; text-decoration: none; }
+
+/* Remove white background from main content */
+main {
+  flex: 1;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: transparent;
+}
+
+/* Gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Lyrics Block */
+.lyrics-block {
+  background: rgba(0,0,0,0.5);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #fff;
+}
+.lyrics-block pre { white-space: pre-wrap; }
