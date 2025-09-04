@@ -71,3 +71,10 @@ main {
   color: #fff;
 }
 .lyrics-block pre { white-space: pre-wrap; }
+
+/* ==== OVERRIDES: shrink navbar & footer safely ==== */
+nav, footer {
+  height: 32px !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+}
