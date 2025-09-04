@@ -71,3 +71,11 @@ main {
   color: #fff;
 }
 .lyrics-block pre { white-space: pre-wrap; }
+
+/* ==== OVERRIDE: shrink navbar & footer safely (no layout changes) ==== */
+nav, footer {
+  height: 32px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 32px !important;   /* vertical alignment help */
+}
